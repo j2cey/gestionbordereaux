@@ -74,7 +74,7 @@ import 'vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css';
 
 import DatePicker from 'vue2-datepicker';
 import 'vue2-datepicker/index.css';
-//import 'vue2-datepicker/locale/fr-fr';
+import 'vue2-datepicker/locale/fr';
 
 // necessaire pour rendre un modal draggable (doit d'abord être installé: 'npm install --save jquery-ui-dist')
 import 'jquery-ui-dist/jquery-ui';

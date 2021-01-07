@@ -18,6 +18,7 @@ use Illuminate\Validation\Rule;
  * @property string|null $dateremise_du
  * @property string|null $dateremise_au
  * @property string|null $localisation
+ * @property string|null $type
  * @property string|null $statut
  * @property int $per_page
  * @property int $page

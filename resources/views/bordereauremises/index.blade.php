@@ -25,12 +25,13 @@
                             dateremise_du: '',
                             dateremise_au: '',
                             localisation: '',
+                            type: '',
                             statut: '',
                             }"
                         v-slot="{ params, update, change, clear, processing }"
                     >
 
-                        <form class="tw-grid tw-grid-cols-8 tw-col-gap-4 tw-pb-3 tw-border-b tw-border-gray-400">
+                        <form class="tw-grid tw-grid-cols-10 tw-col-gap-4 tw-pb-3 tw-border-b tw-border-gray-400">
                             <div class="tw-col-span-4 md:tw-col-span-2">
                                 <label
                                     for="dateremise_du"
@@ -39,7 +40,7 @@
                                     Du
                                 </label>
                                 <div class="relative">
-                                    <vue2-datepicker id="dateremise_du" v-model="params.dateremise_du" format="YYYY-MM-DD" @change="change"></vue2-datepicker>
+                                    <vue2-datepicker id="dateremise_du" lang="fr" style="width: 90%; height: 90%;" v-model="params.dateremise_du" format="YYYY-MM-DD" @change="change"></vue2-datepicker>
                                 </div>
                             </div>
 
@@ -51,11 +52,40 @@
                                     Au
                                 </label>
                                 <div class="relative">
-                                    <vue2-datepicker id="dateremise_au" v-model="params.dateremise_au" format="YYYY-MM-DD" @change="change"></vue2-datepicker>
+                                    <vue2-datepicker id="dateremise_au" lang="fr" style="width: 90%; height: 90%;" v-model="params.dateremise_au" format="YYYY-MM-DD" @change="change"></vue2-datepicker>
                                 </div>
                             </div>
 
 {{--                            TODO: PB de rafraichissement des parametres de filtre--}}
+
+                            <div class="tw-col-span-4 md:tw-col-span-2">
+                                <label
+                                    for="type"
+                                    class="tw-block tw-uppercase tw-tracking-wide tw-text-gray-700 tw-text-xs tw-font-bold tw-mb-2"
+                                >
+                                    Type
+                                </label>
+                                <div class="tw-inline-flex">
+                                    <div class="tw-relative">
+                                        <select
+                                            v-model="params.type"
+                                            @change="change"
+                                            id="type"
+                                            class="tw-appearance-none tw-block tw-w-full tw-bg-gray-200 focus:tw-bg-white tw-text-gray-700 tw-border tw-border-gray-400 focus:tw-border-gray-500 tw-rounded-sm tw-py-3 tw-pl-4 tw-pr-8 tw-leading-tight focus:tw-outline-none"
+
+                                        >
+                                            <option
+                                                v-for="type in {{ $types }}"
+                                                :value="type.id"
+                                            >@{{ type.titre }}</option>
+                                        </select>
+                                        <select-angle></select-angle>
+                                    </div>
+                                    <div class="input-group-append">
+                                        <button type="button" id="type_clear" name="type_clear" class="btn btn-default" @click="[params.type= '', change()]"><i class="fa fa-times"></i></button>
+                                    </div>
+                                </div>
+                            </div>
 
                             <div class="tw-col-span-4 md:tw-col-span-2">
                                 <label

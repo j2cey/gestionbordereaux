@@ -23,6 +23,7 @@ class BordereauremiseSearch extends Search
         if ($this->params->search->hasFilter()) {
             $dateremiserange = $this->getDateRemiseRangeCrit($this->params->search->search);
             $localisation = $this->getLocalisationCrit($this->params->search->search);
+            $type = $this->getTypeCrit($this->params->search->search);
             $statut = $this->getStatutCrit($this->params->search->search);
             //dd($dateremiserange,$localisation,$statut);
             if ($dateremiserange) {
@@ -35,6 +36,10 @@ class BordereauremiseSearch extends Search
             if ($localisation) {
                 $query
                     ->where('bordereauremise_loc_id', $localisation);
+            }
+            if ($type) {
+                $query
+                    ->where('bordereauremise_type_id', $type);
             }
             if ($statut) {
                 $query
@@ -75,6 +80,19 @@ class BordereauremiseSearch extends Search
         }
         return $localisation;
     }
+
+    private function getTypeCrit($search) {
+        $search_arr = explode('|', $search);
+        $type = null;
+        foreach ($search_arr as $crit) {
+            $crit_arr = explode(':', $crit);
+            if ($crit_arr[0] === "type") {
+                $type = $crit_arr[1];
+            }
+        }
+        return $type;
+    }
+
     private function getStatutCrit($search) {
         $search_arr = explode('|', $search);
         $statut = null;

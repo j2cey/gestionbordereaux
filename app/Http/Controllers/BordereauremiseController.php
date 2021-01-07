@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use App\Models\BordereauremiseType;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Database\Eloquent\Collection;
@@ -64,12 +65,14 @@ class BordereauremiseController extends Controller
     public function index()
     {
         $localisations = BordereauremiseLoc::all();
+        $types = BordereauremiseType::all();
         $bordereaux_wf = Workflow::where('model_type', 'App\Models\Bordereauremise')->first();
         $statuts = $bordereaux_wf ? WorkflowStep::where('workflow_id', $bordereaux_wf->id)->orWhereNull('workflow_id')->get() : null;
         return view('bordereauremises.index')
             ->with('perPage', new \Illuminate\Support\Collection(config('system.per_page')))
             ->with('defaultPerPage', config('system.default_per_page'))
             ->with('localisations', $localisations)
+            ->with('types', $types)
             ->with('statuts', $statuts)
             ;
     }

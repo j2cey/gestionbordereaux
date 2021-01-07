@@ -34,6 +34,7 @@ class FetchRequest extends FormRequest  implements ISearchFormRequest
         $payload = $this->addToPayload($payload, 'dateremise_du', substr($this->dateremise_du, 0, 10));
         $payload = $this->addToPayload($payload, 'dateremise_au', substr($this->dateremise_au, 0, 10));
         $payload = $this->addToPayload($payload, 'localisation', $this->localisation);
+        $payload = $this->addToPayload($payload, 'type', $this->type);
         $payload = $this->addToPayload($payload, 'statut', $this->statut);
 
         return $payload;
