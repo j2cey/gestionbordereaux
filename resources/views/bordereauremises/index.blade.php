@@ -31,7 +31,7 @@
                     >
 
                         <form class="tw-grid tw-grid-cols-8 tw-col-gap-4 tw-pb-3 tw-border-b tw-border-gray-400">
-                            <div class="tw-col-span-8 md:tw-col-span-2">
+                            <div class="tw-col-span-4 md:tw-col-span-2">
                                 <label
                                     for="dateremise_du"
                                     class="tw-block tw-uppercase tw-tracking-wide tw-text-gray-700 tw-text-xs tw-font-bold tw-mb-2"

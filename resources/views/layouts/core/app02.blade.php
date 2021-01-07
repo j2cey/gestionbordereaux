@@ -46,6 +46,8 @@
 <script src="{{ asset('AdminLTE/plugins/sweetalert2/sweetalert2.min.js') }}"></script>
 <!-- Toastr -->
 <script src="{{ asset('AdminLTE/plugins/toastr/toastr.min.js') }}"></script>
+<!-- AdminLTE Customization -->
+<script src="{{ asset('AdminLTE/dist/js/demo.js') }}"></script>
 
 </body>
 

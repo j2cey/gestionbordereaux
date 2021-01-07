@@ -1,7 +1,9 @@
-<nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
+<nav class="main-header navbar navbar-expand-md navbar-light navbar-lightblue">
     <div class="container">
-        <a href="/" class="navbar-brand">
-
+        <a href="/" class="navbar-brand"
+           style="display: flex; align-items: center; justify-content: center; height: 100%; ">
+            <img src="{{ asset('assets/images/logo.png') }}" alt="Logo" class="brand-image elevation-3"
+                 style="opacity: .8">
             <span class="brand-text font-weight-light">{{ config('app.name', 'Admin-IT') }}</span>
         </a>
 

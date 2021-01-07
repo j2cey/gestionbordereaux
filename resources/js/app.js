@@ -87,6 +87,7 @@ Vue.component('person-index', require('./views/persons/index').default);
 Vue.component('vue-noty', require('./components/Noty').default);
 Vue.component('vue-login', require('./views/Login').default);
 Vue.component('VueCtkDateTimePicker', VueCtkDateTimePicker);
+Vue.component('vue-ctk-date-time-picker', window['vue-ctk-date-time-picker']);
 Vue.component('vue-dtpicker', require('./components/vueDTpicker').default);
 Vue.component('vue2-datepicker', require('vue2-datepicker').default);
 Vue.component('vue-datepicker', require('vuejs-datepicker').default);
