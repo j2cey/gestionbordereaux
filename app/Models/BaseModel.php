@@ -22,6 +22,7 @@ use Illuminate\Support\Carbon;
  */
 class BaseModel extends Model
 {
+	//comment to test git push
     use BaseTrait;
 
     public function getRouteKeyName() { return 'uuid'; }
